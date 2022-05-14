@@ -1,9 +1,16 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import styles from './login.module.css';
 
 const Login = ({ authService }) => {
+    const history = useHistory();
+
+    const goToMaker = () => {
+        history.push('/maker');
+    };
+
     const onLogin = (event) => {
         authService //
             .login(event.currentTarget.textContent)
